@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show</title>
+    <title><%=campground.title%></title>
 </head>
 <body>
     <h1>CAMP SITES HERE ONLY</h1>
     <h2><%= campground.title %></h2>
     <h2><%= campground.location %></h2>
+    <footer>
+        <a href="/campgrounds/<%= campground._id%>/edit">Edit A Camp</a>
+        <a href="/campgrounds">All Camps</a> 
+        <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+            <!-- Hidden input field to override the POST method with DELETE -->
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit">Delete</button>
+        </form>
+    </footer>
 </body>
 </html>
