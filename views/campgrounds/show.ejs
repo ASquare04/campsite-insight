@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=campground.title%></title>
-</head>
-<body>
-    <h1>CAMP SITES HERE ONLY</h1>
-    <h2><%= campground.title %></h2>
-    <h2><%= campground.location %></h2>
-    <footer>
-        <a href="/campgrounds/<%= campground._id%>/edit">Edit A Camp</a>
-        <a href="/campgrounds">All Camps</a> 
-        <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
-            <!-- Hidden input field to override the POST method with DELETE -->
-            <input type="hidden" name="_method" value="DELETE">
-            <button type="submit">Delete</button>
-        </form>
-    </footer>
-</body>
-</html>
+<%=layout('layout/boiler') %>
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= campground.title %></h5>
+              <p class="card-text"><%= campground.description %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-muted"><%= campground.location %></li>
+              <li class="list-group-item">$<%= campground.price %>/Hour</li>
+            </ul>
+            <div class="card-body">
+                <a class = "btn btn-primary"href="/campgrounds/<%= campground._id%>/edit">Edit Camp</a>
+                <a class = "btn btn-secondary"href="/campgrounds">Show All</a> 
+                <form  class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                <button class = "btn btn-danger" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
