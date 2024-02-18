@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campsites</title>
-</head>
-<body>
-    <h1>All are here only</h1>
-    <h2>
-        <a href="/campgrounds/new">Add A New</a>
-    </h2>
-    <ul>
+<%=layout('layout/boiler') %>
+    <h2>Diverse Campsite Selection</h2>
+    <h3>Coastal Retreats to Mountain Hideaways</h3>
         <% for (let camp of campgrounds) { %>
-            <li><a href="/campgrounds/<%= camp._id %>"><%= camp.title %></a></li>
+            <div class="card mb-3">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= camp.title %></h5>
+                            <p class="card-text"><%= camp.description %></p>
+                            <p class="card-text">
+                                <small class="text-muted"><%= camp.location %></small>
+                            </p>
+                            <a class="btn bg-info-subtle text-info" href="/campgrounds/<%=camp._id%>">View <%=camp.title%></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <% } %>
         
-    </ul>
-</body>
-</html>
