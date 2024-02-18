@@ -1,12 +1,13 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
+const engineMate = require('ejs-mate')
 const Campground = require('./models/campground');
 const methodOverride = require('method-override');
 
 mongoose.connect('mongodb://localhost:27017/camp-insight', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true
 });
 
 const db = mongoose.connection;
@@ -17,6 +18,7 @@ db.once("open", () => {
 
 const app = express();
 
+app.engine('ejs', engineMate)
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
