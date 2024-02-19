@@ -22,6 +22,9 @@ app.engine('ejs', engineMate)
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.static(path.join(__dirname, 'public', 'imgs')));
+app.use(express.static(path.join(__dirname, 'public', 'stylesheets')));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
@@ -36,6 +39,14 @@ app.get('/campgrounds', async (req, res) => {
 
 app.get('/campgrounds/new', (req, res) => {
     res.render('campgrounds/new');
+});
+
+app.get('/support', (req, res) => {
+    res.render('sections/support');
+});
+
+app.get('/spark', (req, res) => {
+    res.render('sections/spark');
 });
 
 app.post('/campgrounds', async (req, res) => {
