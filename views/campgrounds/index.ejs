@@ -1,21 +1,23 @@
 <%=layout('layout/boiler') %>
-    <h2>Diverse Campsite Selection</h2>
-    <h3>Coastal Retreats to Mountain Hideaways</h3>
+    <h6 class="display-6 fs-3">From Coastal Retreats to Mountain Hideaways</h6>
         <% for (let camp of campgrounds) { %>
-            <div class="card mb-3">
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title"><%= camp.title %></h5>
-                            <p class="card-text"><%= camp.description %></p>
-                            <p class="card-text">
-                                <small class="text-muted"><%= camp.location %></small>
-                            </p>
-                            <a class="btn bg-info-subtle text-info" href="/campgrounds/<%=camp._id%>">View <%=camp.title%></a>
+            <div class="container-md mt-4">
+                <div class="card mb-3">
+                    <div class="row">
+                        <div class="col-md-4 p-0 m-0" style="background-color: #dadada; color: whitesmoke;">
+                            <!-- <img src="/loc1.jpg" alt="" srcset="" class="card-img-top img-fluid"> -->
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= camp.title %></h5>
+                                <p class="card-text"><%= camp.description %></p>
+                                <p class="card-text">
+                                    <small class="text-muted"><%= camp.location %></small>
+                                </p>
+                                <a class="btn bg-info-subtle text-body-emphasis" href="/campgrounds/<%=camp._id%>">View <%=camp.title%></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         <% } %>
-        
