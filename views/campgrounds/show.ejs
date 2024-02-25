@@ -1,23 +1,61 @@
-<%=layout('layout/boiler') %>
+<%= layout('layout/boiler') %>
 <h4 class="display-5 fs-4"></h4>
-<div class="row">
-    <div class="col-6 offset-3">
-        <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><%= campground.title %></h5>
-              <p class="card-text"><%= campground.description %></p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="/loc4.jpg" alt="" srcset="" class="img-thumbnail mb-2">
+                    <h5 class="card-title"><%= campground.title %></h5>
+                    <p class="card-text"><%= campground.description %></p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-muted"><%= campground.location %></li>
+                        <li class="list-group-item">$<%= campground.price %>/Hour</li>
+                    </ul>
+                    <div class="card-body">
+                        <a class="btn btn-primary" href="/campgrounds/<%= campground._id%>/edit">Edit Camp</a>
+                        <a class="btn btn-secondary" href="/campgrounds">Show All</a> 
+                        <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item text-muted"><%= campground.location %></li>
-              <li class="list-group-item">$<%= campground.price %>/Hour</li>
-            </ul>
-            <div class="card-body">
-                <a class = "btn btn-primary"href="/campgrounds/<%= campground._id%>/edit">Edit Camp</a>
-                <a class = "btn btn-secondary"href="/campgrounds">Show All</a> 
-                <form  class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
-                    <input type="hidden" name="_method" value="DELETE">
-                <button class = "btn btn-danger" type="submit">Delete</button>
-                </form>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="display-6">Your Thoughts Matter</h2>
+                    <form action="/campgrounds/<%=campground._id%>/reviews" method="POST" class="mb-3 validated-form" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label" for="rating">Rating</label>
+                            <input class="form-range" type="range" min="1" max="5" name="review[rating]" id="rating">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="body">Review</label>
+                            <textarea class="form-control" name="review[content]" id="body" cols="30" rows="3" required></textarea>
+                            <div class="valid-feedback">
+                                Seems good!
+                            </div>
+                        </div>
+                        <button class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+                <div class="col-12">
+                    <% for (let review of campground.reviews) { %>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Rating: <%= review.rating %></h5>
+                                <p class="card-text">Review: <%= review.content %></p>
+                                <form action="/campgrounds/<%=campground._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
             </div>
         </div>
     </div>
