@@ -1,4 +1,4 @@
-module.exports.descriptors = [
+const descriptors = [
     'Forest',
     'Ancient',
     'Petrified',
@@ -19,7 +19,7 @@ module.exports.descriptors = [
     'Diamond'
 ]
 
-module.exports.places = [
+const places = [
     'Flats',
     'Village',
     'Canyon',
@@ -43,3 +43,38 @@ module.exports.places = [
     'Hollow'
 ]
 
+const descText = [
+    "Cozy cabin nestled in the woods with a serene lake view. Perfect for a romantic getaway or a peaceful retreat from city life.",
+    "Rustic log cabin overlooking a tranquil river. Escape to nature and enjoy the soothing sounds of flowing water and chirping birds.",
+    "Spacious tent site with stunning mountain vistas. Wake up to breathtaking sunrises and spend your days exploring scenic hiking trails.",
+    "Charming cottage with panoramic views of rolling hills. Experience the beauty of the countryside while relaxing in a cozy, well-appointed home.",
+    "Secluded treehouse with a breathtaking forest canopy view. Disconnect from the hustle and bustle and reconnect with nature high above the ground.",
+    "Quaint yurt overlooking a picturesque meadow. Immerse yourself in the simplicity of off-grid living while surrounded by natural beauty.",
+    "Luxurious glamping tent with a private beachfront view. Indulge in upscale camping amenities while enjoying exclusive access to a pristine shoreline.",
+    "Eco-friendly geodesic dome with a view of starry skies. Sleep under a celestial canopy and marvel at the wonders of the universe from the comfort of your dome.",
+    "Riverside RV site with access to fishing and boating. Park your RV by the water's edge and spend your days casting lines and cruising the river.",
+    "Traditional teepee set amidst towering redwood trees. Embrace Native American heritage and immerse yourself in the rich history of the land.",
+    "Modern A-frame cabin with a view of snow-capped peaks. Experience the best of contemporary design while surrounded by majestic mountain scenery.",
+    "Historic lighthouse keeper's cottage with ocean views. Step back in time and live like a maritime guardian while enjoying breathtaking coastal vistas.",
+    "Family-friendly campground with a playground and lake access. Create lasting memories with your loved ones while enjoying outdoor activities and waterside fun.",
+    "Remote wilderness campsite with unspoiled nature views. Leave civilization behind and discover the untamed beauty of the great outdoors.",
+    "Rustic hunting lodge overlooking a vast wilderness area. Experience the thrill of the hunt and unwind in a cozy lodge surrounded by pristine nature.",
+    "Quirky converted train caboose with scenic countryside views. All aboard for a unique lodging experience with panoramic vistas of rolling hills.",
+    "Chic airstream trailer with a sunset view over the desert. Travel in style and comfort while chasing the horizon in a retro-inspired mobile home.",
+    "Safari tent retreat with views of roaming wildlife. Immerse yourself in the wild and witness majestic animals in their natural habitat.",
+    "Mountain chalet with a cozy fireplace and mountain views. Relax by the fire after a day of skiing and enjoy sweeping vistas of snow-capped peaks.",
+    "Seaside bungalow steps away from a sandy beach. Wake up to the sound of waves crashing and spend your days soaking up the sun on the shore.",
+    "Sustainable earthship with views of a lush green valley. Embrace eco-friendly living in a unique, off-grid home nestled in a verdant landscape.",
+    "Lakeside chalet with a dock for fishing and boating. Cast a line or set sail from your private dock and enjoy serene lakeside living.",
+    "Artist's studio retreat with inspiring mountain views. Let your creativity flow in a peaceful setting with breathtaking mountain vistas.",
+    "Remote wilderness cabin accessible only by hiking. Embark on an adventure to reach your secluded cabin and immerse yourself in pure wilderness.",
+    "Sleek modern pod with panoramic views of the city skyline. Experience urban living elevated to new heights in a stylish, high-rise pod.",
+    "Off-grid tiny house with views of rolling countryside. Embrace minimalist living and enjoy expansive views of the countryside from your tiny home.",
+    "Ski-in/ski-out lodge with stunning mountain views. Hit the slopes right from your doorstep and return to a cozy lodge with unbeatable mountain views.",
+    "Coastal cliffside retreat with dramatic ocean views. Perched on a cliff overlooking the sea, this retreat offers unparalleled views of crashing waves.",
+    "Vintage airstream trailer with a retro-inspired interior. Step back in time and experience the nostalgia of a bygone era in a vintage airstream trailer.",
+    "Floating houseboat with views of serene waterways. Drift away on calm waters and enjoy a unique stay in a floating home with panoramic views.",
+    "Secluded log cabin with a hot tub and forest views. Relax in a bubbling hot tub surrounded by the sights and sounds of a tranquil forest oasis."
+];
+
+module.exports = { descText, places, descriptors };
