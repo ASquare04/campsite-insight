@@ -1,1 +1,22 @@
-<%=layout('layout/boiler') %>      
+<%=layout('layout/boiler') %>  
+<link rel="stylesheet" href="/home.css">
+<h1 class="display-6 fs-1 flex justify-content-center">Spark : empower your wisdom</h1> 
+<div style="text-align:center;">
+    <p class="display-6 mt-4 fs-5">
+        Introducing Spark, your virtual assistant on Campground! Spark is your go-to companion for all your camping queries and needs. Whether you're planning your next outdoor adventure, seeking insider tips on camping gear, or looking for expert advice on navigating the wilderness
+    </p>
+    <p class="display-6 mt-4 fs-5">
+        Spark is here to help. Simply ask away, and let Spark illuminate your camping journey with expert insights and personalized recommendations.
+    </p>
+</div>
+  <div class="container-md w-50">
+    <div id="generatedResult" class="mt-4 ml-4 mb-4 display-6 fs-6"></div>
+    <div id="inputForm">
+      <form id="storyForm">  
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="storyInput" name="storyInput" placeholder="Type your query...." required>
+            <button type="submit" class="btn btn-info text-white" id="basic-addon2">Generate Response</button>
+          </div>
+      </form>
+    </div> 
+  </div>
