@@ -1,30 +1,44 @@
 <%=layout('layout/boiler') %>
 <div class="row">
 <div class="col-6 offset-3">
-    <h1 class="text-center">Share, if you care</h1>
-    <form action="/campgrounds" method="post">
+    <h1 class="text-center display-5">Share, if you care</h1>
+    <form action="/campgrounds" method="post" novalidate class="validated-form">
         <div class="mb-3">
             <label class="form-label" for="title">Title</label>
             <input class="form-control" type="text" name="campground[title]" id="title" required>
+            <div class="valid-feedback">
+                Seems good!
+            </div>
         </div>
         <div class="mb-3">
             <label class="form-label" for="location">Location</label>
             <input class="form-control" type="text" name="campground[location]" id="location" required>
+            <div class="valid-feedback">
+                Satisfactory
+            </div>
         </div>
         <div class="mb-3">
             <label class="form-label" for="price">Price</label>
             <div class="input-group">
                 <span class="input-group-text" id="price-label">$</span>
-                <input type="text"class="form-control" name="campground[price]" id="price" placeholder="0.00" aria-describedby="price-label">
+                <input type="text"class="form-control" name="campground[price]" id="price" placeholder="0.00" aria-describedby="price-label" required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                </div>
             </div>
         </div>
         <div class="mb-3">
             <label class="form-label" for="image">Image URL</label>
-            <input class="form-control" type="text" name="campground[image]" id="image">
+            <input class="form-control" type="text" name="campground[image]" id="image" required>
         </div>
         <div class="mb-3">
             <label class="form-label" for="description">Description</label>
             <textarea class="form-control" type="text" name="campground[description]" id="description" required></textarea>
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                Kindly add some descriptor
+            </div>
+            <div class="valid-feedback">
+                Pretty nice!
+            </div>
         </div>
         <div class="mb-3">
             <button class="btn btn-success">Add Campground</button>
