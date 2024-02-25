@@ -2,29 +2,29 @@
 <div class="row">
     <div class="col-6 offset-3">
         <h1 class="text-center display-5">Enhance Camp</h1>
-        <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="post">
+        <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="post" novalidate class="validated-form">
             <div class="mb-3">
                 <label class="form-label" for="title">Title</label>
-                <input class="form-control" type="text" name="campground[title]" id="title" value="<%= campground.title%>">
+                <input class="form-control" type="text" name="campground[title]" id="title" value="<%= campground.title%>" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="location">Location</label>
-                <input class="form-control" type="text" name="campground[location]" id="location" value="<%= campground.location%>">
+                <input class="form-control" type="text" name="campground[location]" id="location" value="<%= campground.location%>" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="price">Price</label>
                 <div class="input-group">
                     <span class="input-group-text" id="price-label">$</span>
-                    <input type="text"class="form-control" name="campground[price]" id="price" value="<%= campground.price%>" aria-describedby="price-label">
+                    <input type="text"class="form-control" name="campground[price]" id="price" value="<%= campground.price%>" aria-describedby="price-label" required>
                 </div>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="image">Image URL</label>
-                <input class="form-control" type="text" name="campground[image]" value="<%= campground.image%>" id="image">
+                <input class="form-control" type="text" name="campground[image]" value="<%= campground.image%>" id="image" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="description">Description</label>
-                <textarea class="form-control" type="text" name="campground[description]" id="description"><%=campground.description%></textarea>
+                <textarea class="form-control" type="text" name="campground[description]" id="description" required><%=campground.description%></textarea>
             </div>
             <div class="mb-3">
                 <button class="btn btn-success text-white">Update Campground</button>
