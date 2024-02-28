@@ -25,6 +25,64 @@
                 }
               }
             </script>
+            <script type="module">
+              import { GoogleGenerativeAI } from "@google/generative-ai";
+              const API_KEY = "Y-O-U-R  A-P-I  K-E-Y ";
+              const genAI = new GoogleGenerativeAI(API_KEY);
+          
+              async function run() {
+                const form = document.getElementById("storyForm");
+                const generatedResult = document.getElementById("generatedResult");
+            
+                form.addEventListener("submit", async function(event) {
+                    event.preventDefault();
+            
+                    document.getElementById("inputForm").style.display = "none";
+          
+                    const generatingResultMessage = document.createElement('h6');
+                    generatingResultMessage.textContent = 'Processing Query...';
+                    generatedResult.appendChild(generatingResultMessage);
+            
+                    let dots = 0;
+                    const interval = setInterval(() => {
+                        dots = (dots + 1) % 4;
+                        generatingResultMessage.textContent = `Getting Response Ready${'.'.repeat(dots)}`;
+                    }, 500);
+            
+                    const input = document.getElementById("storyInput").value;
+            
+                    const enteredValue = document.createElement('p');
+                    enteredValue.textContent = 'User : ' + input;
+                    generatedResult.appendChild(enteredValue);
+            
+                    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+                    const result = await model.generateContent(input);
+                    const response = await result.response;
+                    let text = await response.text();
+            
+                    text = text.replace(/[*#-]/g, '');
+            
+                    clearInterval(interval);
+                    generatingResultMessage.textContent = '';
+                    generatedResult.style.opacity = 0.5;
+            
+                    const div = document.createElement('div');
+                    div.innerHTML = 'Spark: ' + text;
+                    generatedResult.appendChild(div);
+                    
+                    const hr = document.createElement('hr');
+                    generatedResult.appendChild(hr);
+            
+                    generatedResult.style.opacity = 1;
+                    document.getElementById("storyInput").value = "";
+                    document.getElementById("inputForm").style.display = "block";
+            
+                });
+            }
+            
+            run();
+            
+            </script>
+    
 </body>
-
 </html>
