@@ -1,17 +1,26 @@
-<nav class="navbar navbar-expand-lg bg-warning">
+<link rel="stylesheet" href="/stylesheets/home.css">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand fw-semibold" href="/">CampsiteInsight</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="/campgrounds">Explore</a>
-          <a class="nav-link" href="/spark">AskSpark</a>
-          <a class="nav-link" href="/campgrounds/new">Contribute</a>
-          <a class="nav-link" href="/support">Support</a>
+        <a class="navbar-brand fw-semibold" href="/">CampsiteInsight</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav me-auto">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/campgrounds">Explore</a>
+                <a class="nav-link" href="/spark">AskSpark</a>
+                <a class="nav-link" href="/campgrounds/new">Contribute</a>
+                <a class="nav-link" href="/support">Support</a>
+            </div>
+            <div class="navbar-nav">
+                <% if(!currentUser) {%>
+                <a class="nav-link" href="/login">Login</a>
+                <a class="nav-link" href="/register">Register</a>
+                <% } else {%>
+                <a class="nav-link" href="/logout">Logout</a>
+                <% } %>
+            </div>
         </div>
-      </div>
     </div>
 </nav>
