@@ -1,28 +1,55 @@
 body{
-  background-color: aliceblue;
+  background-color: #000;
+  color: aliceblue;
 }
 .navbar {
-  background-image: linear-gradient(to right, #3949ab, #0069c0, #00796b, #558b2f, #7cb342);
+  background-color: transparent;
+  height: 120px;
 }
 
-.navbar-nav .nav-link, .navbar-brand {
-  color: #f5f5f5 !important; 
+.nav-link {
+  color: aliceblue;
+  transition: all .3s ease-in-out;
+  margin-right: 18px;
 }
 
 .navbar-nav .nav-link:hover{
-  color: #cfcfcf !important; 
+  color:#2a752a;
+  transform: scale(1.05);
+}
+
+#logout:hover{
+  color: rgb(129, 28, 28);
+}
+
+.navbar-brand{
+  transition: all .3s ease-in-out;
+}
+
+.navbar-brand:hover{
+  transform: scale(0.95);
+  cursor: pointer;
 }
 
 
 #bear-img {
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.75)) drop-shadow(0px 6px 8px rgba(0, 0, 0, 0.35)) drop-shadow(0px 10px 12px rgba(0, 0, 0, 0.3)); /* Adjusted values for a more realistic effect */
 }
+.card{
+  background-color: #121212;
+  color: whitesmoke !important;
+  margin-bottom: 10px;
+  transition: all .3s ease-in-out;
+}
+#card1:hover, #card2:hover, #card3:hover {
+  border: 1px solid #121212;
+  transform: scale(0.98);
+  border: 2px groove rgb(62, 174, 148);
+  cursor: pointer;
+}
+
 .card-img-top{
     cursor: pointer;
-    opacity: 0.85;
-}
-.card-img-top:hover{
-    opacity: 1;
 }
 #generatedResult {
   max-height: 350px;
@@ -30,6 +57,31 @@ body{
   text-align:justify;
   background-color: white;
 }   
+
+.footer{
+  background-color: #121212;
+  color: aliceblue;
+}
+
+.social-icon {
+  margin-left: 10px;
+  color:#555;
+  text-decoration: none;
+}
+
+#link1:hover{
+  color: rgb(33, 33, 126);;
+}
+#link2:hover{
+  color: rgb(28, 129, 206);;
+}
+#link3:hover{
+  color: rgb(169, 42, 23);;
+}
+#link4:hover{
+  color: rgb(18, 74, 149);;
+}
+
 ::-webkit-scrollbar {
     width: 3px;
   }
