@@ -77,4 +77,29 @@ const descText = [
     "Secluded log cabin with a hot tub and forest views. Relax in a bubbling hot tub surrounded by the sights and sounds of a tranquil forest oasis."
 ];
 
-module.exports = { descText, places, descriptors };
+const image = [
+        "https://source.unsplash.com/800x400/?campsite",
+        "https://source.unsplash.com/800x400/?trail",
+        "https://source.unsplash.com/800x400/?explorer",
+        "https://source.unsplash.com/800x400/?backpack",
+        "https://source.unsplash.com/800x400/?valley",
+        "https://source.unsplash.com/800x400/?summit",
+        "https://source.unsplash.com/800x400/?scenery",
+        "https://source.unsplash.com/800x400/?nature",
+        "https://source.unsplash.com/800x400/?wilderness",
+        "https://source.unsplash.com/800x400/?alpine",
+        "https://source.unsplash.com/800x400/?adventure",
+        "https://source.unsplash.com/800x400/?backpacking",
+        "https://source.unsplash.com/800x400/?range",
+        "https://source.unsplash.com/800x400/?waterfall",
+        "https://source.unsplash.com/800x400/?ridge",
+        "https://source.unsplash.com/800x400/?vista",
+        "https://source.unsplash.com/800x400/?sunrise",
+        "https://source.unsplash.com/800x400/?campfire",
+        "https://source.unsplash.com/800x400/?trailhead",
+        "https://source.unsplash.com/800x400/?exploration"
+    ];
+    
+
+
+module.exports = { descText, places, descriptors, image };
