@@ -9,6 +9,7 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
+require('dotenv').config()
 
 const campgroundsRoutes = require('./routes/camp')
 const reviewsRoutes = require('./routes/review')
@@ -16,7 +17,7 @@ const usersRoutes = require('./routes/users')
 
 const { isLoggedIn } = require('./middleware');
 
-mongoose.connect('mongodb://localhost:27017/camp-insight')
+mongoose.connect(process.env.MONGO_URL)
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "Connection Error:"))
