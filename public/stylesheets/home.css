@@ -1,6 +1,7 @@
 body{
   background-color: #000;
   color: aliceblue;
+  height: 100%;
 }
 .navbar {
   background-color: transparent;
@@ -55,8 +56,15 @@ body{
   max-height: 350px;
   overflow-y: auto;
   text-align:justify;
-  background-color: white;
+  background-color: #121212;
+  color: whitesmoke;
 }   
+
+#storyInput{
+  background-color: #121212;
+  border: 2px groove #343434;
+  color: rgb(255, 255, 255);
+}
 
 .footer{
   background-color: #121212;
@@ -90,8 +98,40 @@ body{
     background: #555;
   }
   
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #777
   }
-  
+
+  .parallax {
+    background-image: url('https://source.unsplash.com/1440x900/?mountain');
+    height: 80vh;
+    opacity: 0.75;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 0; /* Remove padding */
+    font-size: 36px;
+    transition: all .5s ease-in-out;
+    position: relative;
+    width: 99.9vw;
+    
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+
+  .content {
+    height: 220px;
+    background-color: transparent;
+    font-size: 36px;
+  }
+
+  .parallax:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
